@@ -160,6 +160,10 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
 
             if (this.$$scope.cacheItems) {
 
+                if (this.$$scope.model && this.$$scope.model.length == 0) {
+                  this.$$scope.columns = [];
+                }
+
                 var cachedParams = this.$$cachedParams(this.$$scope.layout.columns);
                 if (cachedParams.modelLength == 0) {
                   // layout change, reset columns
